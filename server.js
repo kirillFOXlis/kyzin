@@ -1,10 +1,11 @@
-const express = require('express');
-const app = express();
+const express = require('express')
+const app = express()
+const port = process.env.PORT || 4000; 
 
-// Определение порта, используя переменные окружения Render ($PORT)
-const PORT = process.env.PORT || 3000;
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
 
-// Запускаем сервер
-app.listen(PORT, () => {
-  console.log(`Server is listening on port ${PORT}`);
-});
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
