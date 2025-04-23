@@ -4,11 +4,10 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
-  },
+  "dev": "vite",
+  "build": "vite build",
+  "serve": "vite preview --port 8080 --host"
+},
   "dependencies": {
     "@supabase/supabase-js": "^2.39.7",
     "leaflet": "^1.9.4",
@@ -36,4 +35,5 @@
     "typescript-eslint": "^8.3.0",
     "vite": "^5.4.2"
   }
+  
 }
