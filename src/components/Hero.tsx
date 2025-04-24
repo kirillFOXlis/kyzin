@@ -8,10 +8,10 @@ const Hero: React.FC = () => {
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6">
-          Discover Amazing <span className="text-blue-400">Destinations</span>
+          Откройте для себя удивительные <span className="text-blue-400">направления</span>
         </h1>
         <p className="text-xl text-white mb-8 max-w-2xl">
-          Explore handpicked travel destinations, read authentic reviews, and plan your next adventure with TravelExplorer.
+          Исследуйте тщательно отобранные направления для путешествий, читайте подлинные отзывы и планируйте свое следующее приключение с TravelExplorer.
         </p>
         
         <div className="bg-white p-4 rounded-lg shadow-lg max-w-3xl mb-8 transition-all transform hover:scale-[1.01]">
@@ -21,14 +21,14 @@ const Hero: React.FC = () => {
                 <Search className="h-5 w-5 text-gray-400 mr-2" />
                 <input 
                   type="text" 
-                  placeholder="Where do you want to go?" 
+                  placeholder="Куда вы хотите поехать?" 
                   className="w-full outline-none"
-                  aria-label="Search destinations"
+                  aria-label="Поиск направлений"
                 />
               </div>
             </div>
             <button className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition-colors">
-              Explore
+              Исследовать
             </button>
           </div>
         </div>
@@ -36,10 +36,10 @@ const Hero: React.FC = () => {
         <div className="flex flex-wrap gap-4">
           <Link to="/map" className="bg-blue-600 hover:bg-blue-700 transition-colors text-white font-medium py-3 px-6 rounded-lg flex items-center shadow-md">
             <MapPin className="h-5 w-5 mr-2" />
-            Open Interactive Map
+            Открыть интерактивную карту
           </Link>
           <Link to="/destinations" className="bg-white hover:bg-gray-100 transition-colors text-blue-600 font-medium py-3 px-6 rounded-lg shadow-md">
-            View Popular Destinations
+            Популярные направления
           </Link>
         </div>
       </div>

@@ -33,40 +33,40 @@ const Navbar: React.FC = () => {
           <div className="hidden md:flex md:items-center md:space-x-6">
             <Link to="/map" className="text-white hover:text-blue-200 transition px-3 py-2 rounded-md text-sm font-medium flex items-center">
               <MapPin className="mr-1 h-4 w-4" />
-              Map
+              Карта
             </Link>
             <Link to="/destinations" className="text-white hover:text-blue-200 transition px-3 py-2 rounded-md text-sm font-medium">
-              Destinations
+              Направления
             </Link>
             <Link to="/recommendations" className="text-white hover:text-blue-200 transition px-3 py-2 rounded-md text-sm font-medium">
-              Recommendations
+              Рекомендации
             </Link>
             {user ? (
               <div className="relative group">
                 <button className="text-white group-hover:text-blue-200 transition px-3 py-2 rounded-md text-sm font-medium flex items-center">
                   <User className="mr-1 h-4 w-4" />
-                  Profile
+                  Профиль
                 </button>
                 <div className="absolute right-0 w-48 mt-2 py-2 bg-white rounded-md shadow-xl z-20 hidden group-hover:block">
                   <Link to="/profile" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                    My Profile
+                    Мой профиль
                   </Link>
                   <button 
                     onClick={handleSignOut}
                     className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center"
                   >
                     <LogOut className="mr-1 h-4 w-4" />
-                    Sign Out
+                    Выйти
                   </button>
                 </div>
               </div>
             ) : (
               <div className="flex space-x-2">
                 <Link to="/login" className="bg-white text-blue-600 hover:bg-blue-50 transition px-4 py-2 rounded-md text-sm font-medium">
-                  Login
+                  Войти
                 </Link>
                 <Link to="/register" className="bg-blue-500 text-white hover:bg-blue-400 transition px-4 py-2 rounded-md text-sm font-medium">
-                  Register
+                  Регистрация
                 </Link>
               </div>
             )}
@@ -97,21 +97,21 @@ const Navbar: React.FC = () => {
               onClick={() => setIsMenuOpen(false)}
               className="text-white hover:bg-blue-700 block px-3 py-2 rounded-md text-base font-medium"
             >
-              Map
+              Карта
             </Link>
             <Link 
               to="/destinations"
               onClick={() => setIsMenuOpen(false)}
               className="text-white hover:bg-blue-700 block px-3 py-2 rounded-md text-base font-medium"
             >
-              Destinations
+              Направления
             </Link>
             <Link 
               to="/recommendations"
               onClick={() => setIsMenuOpen(false)}
               className="text-white hover:bg-blue-700 block px-3 py-2 rounded-md text-base font-medium"
             >
-              Recommendations
+              Рекомендации
             </Link>
             {user ? (
               <>
@@ -120,13 +120,13 @@ const Navbar: React.FC = () => {
                   onClick={() => setIsMenuOpen(false)}
                   className="text-white hover:bg-blue-700 block px-3 py-2 rounded-md text-base font-medium"
                 >
-                  My Profile
+                  Мой профиль
                 </Link>
                 <button
                   onClick={handleSignOut}
                   className="text-white hover:bg-blue-700 block w-full text-left px-3 py-2 rounded-md text-base font-medium"
                 >
-                  Sign Out
+                  Выйти
                 </button>
               </>
             ) : (
@@ -136,14 +136,14 @@ const Navbar: React.FC = () => {
                   onClick={() => setIsMenuOpen(false)}
                   className="text-white hover:bg-blue-700 block px-3 py-2 rounded-md text-base font-medium"
                 >
-                  Login
+                  Войти
                 </Link>
                 <Link 
                   to="/register"
                   onClick={() => setIsMenuOpen(false)}
                   className="text-white hover:bg-blue-700 block px-3 py-2 rounded-md text-base font-medium"
                 >
-                  Register
+                  Регистрация
                 </Link>
               </>
             )}

@@ -39,9 +39,9 @@ const HomePage: React.FC = () => {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Popular Destinations</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Популярные направления</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Explore our handpicked selection of the most amazing places to visit around the world.
+              Исследуйте нашу подборку самых удивительных мест для посещения по всему миру.
             </p>
           </div>
           
@@ -62,7 +62,7 @@ const HomePage: React.FC = () => {
                   to="/destinations"
                   className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 transition-colors"
                 >
-                  View All Destinations
+                  Посмотреть все направления
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </div>
@@ -74,9 +74,9 @@ const HomePage: React.FC = () => {
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Why Choose TravelExplorer</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Почему выбирают TravelExplorer</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              We help travelers discover amazing destinations with expert recommendations and authentic reviews.
+              Мы помогаем путешественникам открывать удивительные направления с экспертными рекомендациями и подлинными отзывами.
             </p>
           </div>
           
@@ -87,9 +87,9 @@ const HomePage: React.FC = () => {
                   <Map className="h-8 w-8 text-blue-600" />
                 </div>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Interactive Maps</h3>
+              <h3 className="text-xl font-semibold mb-2">Интерактивные карты</h3>
               <p className="text-gray-600">
-                Explore destinations visually with our detailed interactive maps. Find the perfect spot for your next adventure.
+                Исследуйте направления визуально с помощью наших подробных интерактивных карт. Найдите идеальное место для вашего следующего приключения.
               </p>
             </div>
             
@@ -99,9 +99,9 @@ const HomePage: React.FC = () => {
                   <Star className="h-8 w-8 text-blue-600" />
                 </div>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Authentic Reviews</h3>
+              <h3 className="text-xl font-semibold mb-2">Подлинные отзывы</h3>
               <p className="text-gray-600">
-                Read honest reviews from real travelers to help you make informed decisions about your travel plans.
+                Читайте честные отзывы от реальных путешественников, чтобы принимать обоснованные решения о ваших планах путешествий.
               </p>
             </div>
             
@@ -111,9 +111,9 @@ const HomePage: React.FC = () => {
                   <Compass className="h-8 w-8 text-blue-600" />
                 </div>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Expert Recommendations</h3>
+              <h3 className="text-xl font-semibold mb-2">Экспертные рекомендации</h3>
               <p className="text-gray-600">
-                Get personalized recommendations based on your preferences and travel style from our travel experts.
+                Получите персонализированные рекомендации на основе ваших предпочтений и стиля путешествий от наших экспертов.
               </p>
             </div>
           </div>
@@ -123,22 +123,22 @@ const HomePage: React.FC = () => {
       <section className="py-16 bg-cover bg-center text-white relative" style={{ backgroundImage: "url('https://images.pexels.com/photos/346768/pexels-photo-346768.jpeg?auto=compress&cs=tinysrgb&w=1600')" }}>
         <div className="absolute inset-0 bg-black bg-opacity-60"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-6">Ready to Plan Your Next Adventure?</h2>
+          <h2 className="text-3xl font-bold mb-6">Готовы спланировать свое следующее приключение?</h2>
           <p className="text-lg mb-8 max-w-2xl mx-auto">
-            Join thousands of travelers who have discovered their dream destinations with TravelExplorer.
+            Присоединяйтесь к тысячам путешественников, которые открыли направления своей мечты с TravelExplorer.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link
               to="/register"
               className="px-6 py-3 bg-blue-600 hover:bg-blue-700 font-medium rounded-lg transition-colors shadow-lg"
             >
-              Sign Up Now
+              Зарегистрироваться
             </Link>
             <Link
               to="/map"
               className="px-6 py-3 bg-white text-blue-600 hover:bg-gray-100 font-medium rounded-lg transition-colors shadow-lg"
             >
-              Explore the Map
+              Исследовать карту
             </Link>
           </div>
         </div>

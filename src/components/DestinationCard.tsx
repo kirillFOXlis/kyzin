@@ -36,14 +36,14 @@ const DestinationCard: React.FC<DestinationCardProps> = ({ destination }) => {
             to={`/destinations/${destination.id}`}
             className="text-blue-600 hover:text-blue-800 font-medium text-sm"
           >
-            View Details
+            Подробнее
           </Link>
           <Link
             to={`/map?lat=${destination.latitude}&lng=${destination.longitude}`}
             className="text-blue-600 hover:text-blue-800 font-medium text-sm flex items-center"
           >
             <MapPin className="h-4 w-4 mr-1" />
-            Show on Map
+            Показать на карте
           </Link>
         </div>
       </div>
