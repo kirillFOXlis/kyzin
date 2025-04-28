@@ -189,11 +189,10 @@ const ProfilePage: React.FC = () => {
             </div>
             
             <div>
-              <h2 className="text-lg font-semibold text-gray-800 mb-4">Your Saved Destinations</h2>
+              <h2 className="text-lg font-semibold text-gray-800 mb-4">Ваши сохраненные пункты назначения</h2>
               <div className="bg-gray-50 border border-gray-200 rounded-lg p-8 text-center">
                 <p className="text-gray-600">
-                  You haven't saved any destinations yet. Explore our recommendations and save your favorites!
-                </p>
+                Вы еще не сохранили ни одного пункта назначения. Ознакомьтесь с нашими рекомендациями и сохраните избранное!                </p>
               </div>
             </div>
           </div>

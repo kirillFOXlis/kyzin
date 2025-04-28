@@ -141,15 +141,15 @@ const DestinationDetailPage: React.FC = () => {
     return (
       <div className="bg-gray-50 min-h-screen py-12">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-2xl font-bold text-gray-900 mb-4">Destination not found</h1>
+          <h1 className="text-2xl font-bold text-gray-900 mb-4">Пункт назначения не найден</h1>
           <p className="text-gray-600 mb-8">
-            The destination you're looking for doesn't exist or has been removed.
+          Пункт назначения, который вы ищете, не существует или был удален.
           </p>
           <Link 
             to="/destinations"
             className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
           >
-            Back to Destinations
+            Вернуться к пунктам назначения
           </Link>
         </div>
       </div>
@@ -183,7 +183,7 @@ const DestinationDetailPage: React.FC = () => {
                 <span className="mx-2 text-gray-500">•</span>
                 <div className="flex items-center text-gray-600">
                   <Clock className="h-4 w-4 mr-1" />
-                  <span className="text-sm">Best time to visit: May-September</span>
+                  <span className="text-sm">Лучшее время для посещения: май-сентябрь</span>
                 </div>
               </div>
               
@@ -193,57 +193,57 @@ const DestinationDetailPage: React.FC = () => {
                   className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors flex items-center"
                 >
                   <MapPin className="h-4 w-4 mr-2" />
-                  View on Map
+                  Посмотреть на карте
                 </Link>
               </div>
             </div>
             
-            <h2 className="text-xl font-bold text-gray-800 mb-4">About this destination</h2>
+            <h2 className="text-xl font-bold text-gray-800 mb-4">Об этом пункте назначения</h2>
             <p className="text-gray-600 mb-6">
               {destination.description}
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               <div>
-                <h3 className="text-lg font-semibold text-gray-800 mb-3">Highlights</h3>
+                <h3 className="text-lg font-semibold text-gray-800 mb-3">Основные моменты</h3>
                 <ul className="space-y-2">
                   <li className="flex items-start">
                     <span className="h-5 w-5 text-blue-500 mr-2">•</span>
-                    <span className="text-gray-600">Beautiful natural landscapes</span>
+                    <span className="text-gray-600">Прекрасные природные ландшафты</span>
                   </li>
                   <li className="flex items-start">
                     <span className="h-5 w-5 text-blue-500 mr-2">•</span>
-                    <span className="text-gray-600">Rich cultural heritage</span>
+                    <span className="text-gray-600">Богатое культурное наследие</span>
                   </li>
                   <li className="flex items-start">
                     <span className="h-5 w-5 text-blue-500 mr-2">•</span>
-                    <span className="text-gray-600">Delicious local cuisine</span>
+                    <span className="text-gray-600">Вкусная местная кухня</span>
                   </li>
                   <li className="flex items-start">
                     <span className="h-5 w-5 text-blue-500 mr-2">•</span>
-                    <span className="text-gray-600">Friendly locals</span>
+                    <span className="text-gray-600">Дружелюбные местные жители</span>
                   </li>
                 </ul>
               </div>
               
               <div>
-                <h3 className="text-lg font-semibold text-gray-800 mb-3">Good to know</h3>
+                <h3 className="text-lg font-semibold text-gray-800 mb-3">Приятно это знать</h3>
                 <ul className="space-y-2">
                   <li className="flex items-start">
                     <span className="h-5 w-5 text-blue-500 mr-2">•</span>
-                    <span className="text-gray-600">Local currency: Euro (€)</span>
+                    <span className="text-gray-600">Местная валюта: Евро (€)</span>
                   </li>
                   <li className="flex items-start">
                     <span className="h-5 w-5 text-blue-500 mr-2">•</span>
-                    <span className="text-gray-600">Language: French, English widely spoken</span>
+                    <span className="text-gray-600">Язык: Широко распространенный французский, английский</span>
                   </li>
                   <li className="flex items-start">
                     <span className="h-5 w-5 text-blue-500 mr-2">•</span>
-                    <span className="text-gray-600">Time zone: GMT+1</span>
+                    <span className="text-gray-600">Часовой пояс: GMT+1</span>
                   </li>
                   <li className="flex items-start">
                     <span className="h-5 w-5 text-blue-500 mr-2">•</span>
-                    <span className="text-gray-600">Visa: Required for some countries</span>
+                    <span className="text-gray-600">Виза: Требуется для некоторых стран</span>
                   </li>
                 </ul>
               </div>
@@ -254,16 +254,16 @@ const DestinationDetailPage: React.FC = () => {
         <div className="mt-8">
           <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
             <MessageCircle className="h-6 w-6 mr-2 text-blue-500" />
-            Reviews & Ratings
+            Отзывы и рейтинги
             <span className="ml-2 text-sm font-normal text-gray-600">({reviews.length})</span>
           </h2>
           
           {user && (
             <div className="bg-white rounded-lg shadow-md p-4 mb-6">
-              <h3 className="text-lg font-semibold mb-4">Write a Review</h3>
+              <h3 className="text-lg font-semibold mb-4">Написать отзыв</h3>
               <form onSubmit={handleReviewSubmit}>
                 <div className="mb-4">
-                  <label className="block text-gray-700 mb-2">Rating</label>
+                  <label className="block text-gray-700 mb-2">Рейтинг</label>
                   <div className="flex items-center">
                     {[1, 2, 3, 4, 5].map((star) => (
                       <button
@@ -280,7 +280,7 @@ const DestinationDetailPage: React.FC = () => {
                   </div>
                 </div>
                 <div className="mb-4">
-                  <label className="block text-gray-700 mb-2">Comment</label>
+                  <label className="block text-gray-700 mb-2">Комментарий</label>
                   <textarea
                     rows={4}
                     value={newReview.comment}
@@ -294,7 +294,7 @@ const DestinationDetailPage: React.FC = () => {
                   type="submit"
                   className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors"
                 >
-                  Submit Review
+                  Отправить отзыв
                 </button>
               </form>
             </div>
@@ -309,13 +309,13 @@ const DestinationDetailPage: React.FC = () => {
           ) : (
             <div className="bg-white rounded-lg shadow-md p-8 text-center">
               <User className="h-12 w-12 mx-auto mb-4 text-gray-400" />
-              <p className="text-gray-600 mb-4">No reviews yet for this destination.</p>
+              <p className="text-gray-600 mb-4">Отзывов об этом направлении пока нет.</p>
               {!user && (
                 <Link 
                   to="/login"
                   className="text-blue-600 hover:text-blue-800 font-medium"
                 >
-                  Login to be the first to write a review
+                  Войдите в систему, чтобы быть первым, кто напишет отзыв
                 </Link>
               )}
             </div>

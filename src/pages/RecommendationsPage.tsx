@@ -7,17 +7,17 @@ import type { Database } from '../types/supabase';
 type Destination = Database['public']['Tables']['destinations']['Row'];
 
 const categories = [
-  { name: 'Trending Now', icon: <TrendingUp className="h-5 w-5" /> },
-  { name: 'Family Friendly', icon: <Users className="h-5 w-5" /> },
-  { name: 'Beach Getaways', icon: <Umbrella className="h-5 w-5" /> },
-  { name: 'Adventure', icon: <Mountain className="h-5 w-5" /> },
-  { name: 'Food & Culture', icon: <Utensils className="h-5 w-5" /> },
-  { name: 'Photography', icon: <Camera className="h-5 w-5" /> },
+  { name: 'Популярное сейчас', icon: <TrendingUp className="h-5 w-5" /> },
+  { name: 'Для семей', icon: <Users className="h-5 w-5" /> },
+  { name: 'Пляжный отдых', icon: <Umbrella className="h-5 w-5" /> },
+  { name: 'Приключения', icon: <Mountain className="h-5 w-5" /> },
+  { name: 'Еда и культура', icon: <Utensils className="h-5 w-5" /> },
+  { name: 'Фотография', icon: <Camera className="h-5 w-5" /> },
 ];
 
 const RecommendationsPage: React.FC = () => {
   const [destinations, setDestinations] = useState<Destination[]>([]);
-  const [activeCategory, setActiveCategory] = useState('Trending Now');
+  const [activeCategory, setActiveCategory] = useState('Популярное сейчас');
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -52,10 +52,9 @@ const RecommendationsPage: React.FC = () => {
     <div className="bg-gray-50 min-h-screen">
       <div className="bg-gradient-to-r from-blue-600 to-purple-600 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-3xl font-bold text-white mb-4">Travel Recommendations</h1>
+          <h1 className="text-3xl font-bold text-white mb-4">Рекомендации по поездкам</h1>
           <p className="text-blue-100 max-w-2xl mx-auto">
-            Discover personalized destination recommendations based on your interests and travel preferences.
-          </p>
+          Откройте для себя персонализированные рекомендации по направлениям, основанные на ваших интересах и предпочтениях в путешествии.          </p>
         </div>
       </div>
       
@@ -94,7 +93,7 @@ const RecommendationsPage: React.FC = () => {
             </div>
             
             <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-xl font-bold text-gray-800 mb-4">Travel Tips for {activeCategory}</h3>
+              <h3 className="text-xl font-bold text-gray-800 mb-4">Советы путешественникам для {activeCategory}</h3>
               
               <div className="space-y-4">
                 <div className="flex items-start">
@@ -102,10 +101,9 @@ const RecommendationsPage: React.FC = () => {
                     <span className="text-blue-600 font-bold">1</span>
                   </div>
                   <div className="ml-4">
-                    <h4 className="font-semibold text-gray-800">Plan Ahead</h4>
+                    <h4 className="font-semibold text-gray-800">Планируйте заранее</h4>
                     <p className="text-gray-600">
-                      Book accommodations and activities in advance, especially during peak season, to avoid disappointment and often get better rates.
-                    </p>
+                    Бронируйте жилье и мероприятия заранее, особенно в разгар сезона, чтобы избежать разочарований и часто получать более выгодные цены.                    </p>
                   </div>
                 </div>
                 
@@ -114,10 +112,9 @@ const RecommendationsPage: React.FC = () => {
                     <span className="text-blue-600 font-bold">2</span>
                   </div>
                   <div className="ml-4">
-                    <h4 className="font-semibold text-gray-800">Pack Smart</h4>
+                    <h4 className="font-semibold text-gray-800">Упаковывай по-умному</h4>
                     <p className="text-gray-600">
-                      Research the weather and pack accordingly. Don't forget essentials like comfortable walking shoes, adapters, and any necessary medications.
-                    </p>
+                    Изучите погоду и соберите необходимые вещи. Не забудьте о таких предметах первой необходимости, как удобная обувь для ходьбы, адаптеры и любые необходимые лекарства.                    </p>
                   </div>
                 </div>
                 
@@ -126,9 +123,9 @@ const RecommendationsPage: React.FC = () => {
                     <span className="text-blue-600 font-bold">3</span>
                   </div>
                   <div className="ml-4">
-                    <h4 className="font-semibold text-gray-800">Learn Key Phrases</h4>
+                    <h4 className="font-semibold text-gray-800">Выучите ключевые фразы</h4>
                     <p className="text-gray-600">
-                      Learning a few basic phrases in the local language can enhance your experience and show respect for the local culture.
+                    Изучение нескольких основных фраз на местном языке поможет вам лучше усвоить их и проявить уважение к местной культуре.
                     </p>
                   </div>
                 </div>
@@ -138,10 +135,9 @@ const RecommendationsPage: React.FC = () => {
                     <span className="text-blue-600 font-bold">4</span>
                   </div>
                   <div className="ml-4">
-                    <h4 className="font-semibold text-gray-800">Try Local Cuisine</h4>
+                    <h4 className="font-semibold text-gray-800">Попробуйте блюда местной кухни</h4>
                     <p className="text-gray-600">
-                      Don't miss the opportunity to taste authentic local dishes. Ask locals for recommendations on where to find the best food.
-                    </p>
+                    Не упустите возможность отведать аутентичные блюда местной кухни. Спросите местных жителей, где можно найти лучшие блюда.                    </p>
                   </div>
                 </div>
               </div>

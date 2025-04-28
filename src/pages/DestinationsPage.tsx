@@ -7,7 +7,7 @@ import type { Database } from '../types/supabase';
 type Destination = Database['public']['Tables']['destinations']['Row'];
 
 const regions = [
-  'Europe', 'Asia', 'North America', 'South America', 'Africa', 'Oceania'
+  'Европа', 'Азия', 'Северная Америка', 'Южная Америка', 'Африка', 'Океания'
 ];
 
 const DestinationsPage: React.FC = () => {
@@ -69,10 +69,9 @@ const DestinationsPage: React.FC = () => {
     <div className="bg-gray-50 min-h-screen">
       <div className="bg-blue-600 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-3xl font-bold text-white mb-4">Explore Amazing Destinations</h1>
+          <h1 className="text-3xl font-bold text-white mb-4">Исследуйте удивительные места</h1>
           <p className="text-blue-100 max-w-2xl mx-auto mb-8">
-            Discover top-rated destinations around the world, from relaxing beaches to exciting cities and adventure spots.
-          </p>
+          Откройте для себя лучшие места по всему миру, от спокойных пляжей до захватывающих городов и мест для приключений.          </p>
           
           <div className="bg-white p-3 rounded-lg shadow-lg max-w-3xl mx-auto">
             <div className="flex items-center border border-gray-300 rounded-lg px-3 py-2">
@@ -95,7 +94,7 @@ const DestinationsPage: React.FC = () => {
             <div className="bg-white rounded-lg shadow-md p-4 mb-6">
               <h3 className="font-semibold text-gray-800 mb-3 flex items-center">
                 <Globe className="h-5 w-5 mr-2 text-blue-500" />
-                Filter by Region
+                Фильтровать по регионам
               </h3>
               <div className="space-y-2">
                 {regions.map((region) => (
@@ -116,7 +115,7 @@ const DestinationsPage: React.FC = () => {
             <div className="bg-white rounded-lg shadow-md p-4">
               <h3 className="font-semibold text-gray-800 mb-3 flex items-center">
                 <Filter className="h-5 w-5 mr-2 text-blue-500" />
-                Filter by Rating
+                Фильтровать по рейтингу
               </h3>
               <div className="space-y-2">
                 {[5, 4, 3, 2, 1].map((rating) => (
@@ -152,16 +151,16 @@ const DestinationsPage: React.FC = () => {
                     className="border border-gray-300 rounded-md p-2 bg-white text-gray-700"
                     defaultValue="name-asc"
                   >
-                    <option value="name-asc">Name (A-Z)</option>
-                    <option value="name-desc">Name (Z-A)</option>
-                    <option value="rating-desc">Highest Rated</option>
-                    <option value="rating-asc">Lowest Rated</option>
+                    <option value="name-asc">Имя (A-Z)</option>
+                    <option value="name-desc">Имя (Z-A)</option>
+                    <option value="rating-desc">Самый высокий рейтинг</option>
+                    <option value="rating-asc">Самый низкий рейтинг</option>
                   </select>
                 </div>
                 
                 {filteredDestinations.length === 0 ? (
                   <div className="bg-white rounded-lg shadow-md p-8 text-center">
-                    <p className="text-gray-600 mb-4">No destinations found matching your criteria.</p>
+                    <p className="text-gray-600 mb-4">Не найдено ни одного пункта назначения, соответствующего вашим критериям.</p>
                     <button 
                       onClick={() => {
                         setSearchTerm('');
@@ -169,7 +168,7 @@ const DestinationsPage: React.FC = () => {
                       }}
                       className="text-blue-600 hover:text-blue-800 font-medium"
                     >
-                      Clear all filters
+                      Очистите все фильтры
                     </button>
                   </div>
                 ) : (

@@ -1,8 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import InteractiveMap from '../components/Map';
 import { Search, Filter, Compass } from 'lucide-react';
 
+interface RegionCoordinates {
+  lat: number;
+  lng: number;
+  zoom: number;
+}
+
+const regionCoordinates: Record<string, RegionCoordinates> = {
+  'Европа': { lat: 48.8566, lng: 2.3522, zoom: 4 },
+  'Азия': { lat: 35.6762, lng: 139.6503, zoom: 4 },
+  'Северная Америка': { lat: 40.7128, lng: -74.0060, zoom: 4 },
+  'Южная Америка': { lat: -22.9068, lng: -43.1729, zoom: 4 },
+  'Африка': { lat: -33.9249, lng: 18.4241, zoom: 4 },
+  'Океания': { lat: -33.8688, lng: 151.2093, zoom: 4 }
+};
+
 const MapPage: React.FC = () => {
+  const [selectedCoordinates, setSelectedCoordinates] = useState<RegionCoordinates | null>(null);
+
+  const handleRegionClick = (region: string) => {
+    const coordinates = regionCoordinates[region];
+    if (coordinates) {
+      setSelectedCoordinates(coordinates);
+    }
+  };
+
   return (
     <div className="bg-gray-50 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -41,13 +65,16 @@ const MapPage: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
           <div className="lg:col-span-1">
             <div className="bg-white rounded-lg shadow-md p-4 mb-6">
-              <h3 className="font-semibold text-gray-800 mb-3">Популярные направления</h3>
+              <h3 className="font-semibold text-gray-800 mb-3">Регионы мира</h3>
               <ul className="space-y-3">
-                {['Париж, Франция', 'Токио, Япония', 'Рим, Италия', 'Нью-Йорк, США', 'Бали, Индонезия'].map((location, index) => (
-                  <li key={index}>
-                    <button className="w-full text-left flex items-center hover:bg-gray-50 p-2 rounded-md transition-colors">
+                {Object.keys(regionCoordinates).map((region) => (
+                  <li key={region}>
+                    <button 
+                      onClick={() => handleRegionClick(region)}
+                      className="w-full text-left flex items-center hover:bg-gray-50 p-2 rounded-md transition-colors"
+                    >
                       <Compass className="h-4 w-4 text-blue-500 mr-2" />
-                      <span className="text-gray-600">{location}</span>
+                      <span className="text-gray-600">{region}</span>
                     </button>
                   </li>
                 ))}
@@ -78,7 +105,7 @@ const MapPage: React.FC = () => {
           </div>
           
           <div className="lg:col-span-3">
-            <InteractiveMap />
+            <InteractiveMap selectedCoordinates={selectedCoordinates} />
           </div>
         </div>
       </div>

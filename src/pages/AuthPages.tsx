@@ -44,12 +44,12 @@ export const LoginPage: React.FC = () => {
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-          Sign in to your account
+        Войдите в свою учетную запись
         </h2>
         <p className="mt-2 text-center text-sm text-gray-600">
-          Or{' '}
+        Или{' '}
           <Link to="/register" className="font-medium text-blue-600 hover:text-blue-500">
-            create a new account
+          создайте новую учетную запись
           </Link>
         </p>
       </div>
@@ -65,7 +65,7 @@ export const LoginPage: React.FC = () => {
           <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                Email address
+              Адрес электронной почты
               </label>
               <div className="mt-1 relative rounded-md shadow-sm">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -94,7 +94,7 @@ export const LoginPage: React.FC = () => {
 
             <div>
               <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-                Password
+              Пароль
               </label>
               <div className="mt-1 relative rounded-md shadow-sm">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -187,12 +187,12 @@ export const RegisterPage: React.FC = () => {
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-          Create a new account
+        Создайте новую учетную запись
         </h2>
         <p className="mt-2 text-center text-sm text-gray-600">
-          Or{' '}
+        Или{' '}
           <Link to="/login" className="font-medium text-blue-600 hover:text-blue-500">
-            sign in to your existing account
+          войдите в свою существующую учетную запись
           </Link>
         </p>
       </div>
@@ -208,7 +208,7 @@ export const RegisterPage: React.FC = () => {
           <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
             <div>
               <label htmlFor="username" className="block text-sm font-medium text-gray-700">
-                Username
+              Имя пользователя
               </label>
               <div className="mt-1 relative rounded-md shadow-sm">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -236,7 +236,7 @@ export const RegisterPage: React.FC = () => {
             
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                Email address
+              Адрес электронной почты
               </label>
               <div className="mt-1 relative rounded-md shadow-sm">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -265,7 +265,7 @@ export const RegisterPage: React.FC = () => {
 
             <div>
               <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-                Password
+              Пароль
               </label>
               <div className="mt-1 relative rounded-md shadow-sm">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -306,7 +306,7 @@ export const RegisterPage: React.FC = () => {
             
             <div>
               <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700">
-                Confirm Password
+              Подтвердите пароль
               </label>
               <div className="mt-1 relative rounded-md shadow-sm">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">

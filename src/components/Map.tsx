@@ -1,46 +1,25 @@
 import React, { useEffect, useState } from 'react';
-import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
+import { YMaps, Map, Placemark, ZoomControl } from '@pbe/react-yandex-maps';
 import { supabase } from '../lib/supabase';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import type { Database } from '../types/supabase';
-import 'leaflet/dist/leaflet.css';
-import L from 'leaflet';
-
-// Fix Leaflet marker icon issue
-// @ts-ignore
-delete L.Icon.Default.prototype._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png',
-  iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png',
-  shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png',
-});
 
 type Destination = Database['public']['Tables']['destinations']['Row'];
 
-const RecenterAutomatically = ({ lat, lng }: { lat: number, lng: number }) => {
-  const map = useMap();
-  useEffect(() => {
-    map.setView([lat, lng], 12);
-  }, [lat, lng, map]);
-  return null;
-};
+interface RegionCoordinates {
+  lat: number;
+  lng: number;
+  zoom: number;
+}
 
-const InteractiveMap: React.FC = () => {
+interface MapProps {
+  selectedCoordinates: RegionCoordinates | null;
+}
+
+const InteractiveMap: React.FC<MapProps> = ({ selectedCoordinates }) => {
   const [destinations, setDestinations] = useState<Destination[]>([]);
-  const [searchParams] = useSearchParams();
-  const paramLat = searchParams.get('lat');
-  const paramLng = searchParams.get('lng');
-  
-  const [center, setCenter] = useState<[number, number]>([
-    paramLat ? parseFloat(paramLat) : 40.730610,
-    paramLng ? parseFloat(paramLng) : -73.935242
-  ]);
-
-  useEffect(() => {
-    if (paramLat && paramLng) {
-      setCenter([parseFloat(paramLat), parseFloat(paramLng)]);
-    }
-  }, [paramLat, paramLng]);
+  const [defaultCenter] = useState<[number, number]>([20, 0]);
+  const defaultZoom = 2;
 
   useEffect(() => {
     const fetchDestinations = async () => {
@@ -58,47 +37,58 @@ const InteractiveMap: React.FC = () => {
     fetchDestinations();
   }, []);
 
+  const mapState = {
+    center: selectedCoordinates 
+      ? [selectedCoordinates.lat, selectedCoordinates.lng]
+      : defaultCenter,
+    zoom: selectedCoordinates ? selectedCoordinates.zoom : defaultZoom,
+  };
+
   return (
-    <div className="h-[600px] w-full">
-      <MapContainer
-        center={center}
-        zoom={8}
-        style={{ height: '100%', width: '100%' }}
-        className="rounded-lg shadow-lg z-10"
-      >
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        
-        <RecenterAutomatically lat={center[0]} lng={center[1]} />
-        
-        {destinations.map((destination) => (
-          <Marker 
-            key={destination.id} 
-            position={[destination.latitude, destination.longitude]}
-          >
-            <Popup>
-              <div className="w-full max-w-[250px]">
-                <img 
-                  src={destination.image_url} 
-                  alt={destination.name} 
-                  className="w-full h-32 object-cover rounded mb-2"
-                />
-                <h3 className="font-bold text-lg">{destination.name}</h3>
-                <p className="text-sm text-gray-600 mb-2">{destination.location}</p>
-                <p className="text-sm mb-3 line-clamp-2">{destination.description}</p>
-                <Link 
-                  to={`/destinations/${destination.id}`}
-                  className="text-blue-600 hover:text-blue-800 text-sm font-medium"
-                >
-                  View Details
-                </Link>
-              </div>
-            </Popup>
-          </Marker>
-        ))}
-      </MapContainer>
+    <div className="h-[600px] w-full rounded-lg shadow-lg overflow-hidden">
+      <YMaps query={{ lang: 'ru_RU' }}>
+        <Map
+          defaultState={{
+            center: defaultCenter,
+            zoom: defaultZoom,
+            controls: []
+          }}
+          state={mapState}
+          width="100%"
+          height="100%"
+          options={{
+            suppressMapOpenBlock: true
+          }}
+        >
+          <ZoomControl />
+          {destinations.map((destination) => (
+            <Placemark
+              key={destination.id}
+              geometry={[destination.latitude, destination.longitude]}
+              properties={{
+                balloonContentHeader: destination.name,
+                balloonContentBody: `
+                  <div style="max-width: 250px">
+                    <img src="${destination.image_url}" 
+                         alt="${destination.name}" 
+                         style="width: 100%; height: 150px; object-fit: cover; border-radius: 4px; margin-bottom: 8px;" />
+                    <p style="color: #666; margin-bottom: 8px;">${destination.location}</p>
+                    <p style="margin-bottom: 12px;">${destination.description}</p>
+                    <a href="/destinations/${destination.id}" 
+                       style="color: #2563eb; font-weight: 500; text-decoration: none;">
+                      Подробнее
+                    </a>
+                  </div>
+                `,
+              }}
+              options={{
+                preset: 'islands#blueCircleDotIcon',
+                openBalloonOnClick: true
+              }}
+            />
+          ))}
+        </Map>
+      </YMaps>
     </div>
   );
 };
