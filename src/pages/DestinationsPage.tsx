@@ -7,7 +7,7 @@ import type { Database } from '../types/supabase';
 type Destination = Database['public']['Tables']['destinations']['Row'];
 
 const regions = [
-  'Europe', 'Asia', 'North America', 'South America', 'Africa', 'Oceania'
+  'Европа', 'Азия', 'Северная Америка', 'Южная Америка', 'Африка', 'Океания'
 ];
 
 const DestinationsPage: React.FC = () => {
