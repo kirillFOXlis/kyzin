@@ -11,7 +11,7 @@ const Hero: React.FC = () => {
           Откройте для себя удивительные <span className="text-blue-400">направления</span>
         </h1>
         <p className="text-xl text-white mb-8 max-w-2xl">
-          Исследуйте тщательно отобранные направления для путешествий, читайте подлинные отзывы и планируйте свое следующее приключение с TravelExplorer.
+          Исследуйте тчательно отобранные направления для путешествий, читайте подлинные отзывы и планируйте свое следующее приключение с TravelExplorer.
         </p>
         
         <div className="bg-white p-4 rounded-lg shadow-lg max-w-3xl mb-8 transition-all transform hover:scale-[1.01]">

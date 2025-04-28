@@ -148,14 +148,14 @@ const ProfilePage: React.FC = () => {
                       ) : (
                         <Save className="h-4 w-4 mr-2" />
                       )}
-                      Save
+                      Сохранить
                     </button>
                     <button
                       onClick={handleCancelEdit}
                       className="bg-gray-200 hover:bg-gray-300 text-gray-700 px-4 py-2 rounded-md text-sm font-medium transition-colors flex items-center"
                     >
                       <X className="h-4 w-4 mr-2" />
-                      Cancel
+                      Отменить
                     </button>
                   </div>
                 ) : (
@@ -164,14 +164,14 @@ const ProfilePage: React.FC = () => {
                     className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors flex items-center"
                   >
                     <Edit className="h-4 w-4 mr-2" />
-                    Edit Profile
+                    Редактировать профиль
                   </button>
                 )}
               </div>
             </div>
             
             <div className="mb-8">
-              <h2 className="text-lg font-semibold text-gray-800 mb-2">About</h2>
+              <h2 className="text-lg font-semibold text-gray-800 mb-2">Ещё</h2>
               {isEditing ? (
                 <textarea
                   name="bio"
@@ -183,7 +183,7 @@ const ProfilePage: React.FC = () => {
                 ></textarea>
               ) : (
                 <p className="text-gray-600">
-                  {profile?.bio || 'No bio information added yet.'}
+                  {profile?.bio || 'Биографическая информация пока не добавлена.'}
                 </p>
               )}
             </div>
