@@ -4,7 +4,7 @@ import { MapPin, Search } from 'lucide-react';
 
 const Hero: React.FC = () => {
   return (
-    <div className="relative bg-cover bg-center h-[600px]" style={{ backgroundImage: "url('https://images.pexels.com/photos/1271619/pexels-photo-1271619.jpeg?auto=compress&cs=tinysrgb&w=1600')" }}>
+    <div className="relative bg-cover bg-center h-[600px]" style={{ backgroundImage: "url('https://avatars.mds.yandex.net/i?id=2ddc71fbc315a8e1439dd7e979d6e493_l-8406302-images-thumbs&n=13')" }}>
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6">
